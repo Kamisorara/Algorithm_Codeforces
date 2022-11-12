@@ -20,4 +20,5 @@ int main() {
         }
     }
     cout << val << endl;
+    return 0;
 }
