@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++.exe - 生成和调试活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+						// program顾名思义就是编译后的可执行程序,该文件是为了调用他
+            "program":
+	             "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [
+								/*
+									args的作用是再调用可执行文件是添加参数
+									下面两句命令的作用分别是:
+									1.将in.txt文件输入进可执行文件
+									2.将可执行文件的结果输出进out.txt文件
+								*/
+                "<${fileDirname}\\.vscode\\oi\\in.txt",
+                ">${fileDirname}\\.vscode\\oi\\out.txt"
+            ],
+
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\cppEnvironment\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+        }
+    ]
+}
